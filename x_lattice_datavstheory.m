@@ -22,12 +22,12 @@ data = [3.7	0.03	0.003	0.008	0.033;
     1040	10.89	5.85	2.97	16.74;
     1979	10.89	10.72	5.61	21.61];
 
-doublePDcalibrate(data(:,1),1e3*data(:,5));
+doublePDcalibrate(1e-3*data(:,1),data(:,5));
 
 P = linspace(0,4,1000);
 
 hF = figure;
-hF.Position(3:4) = [1400 400];
+hF.Position = [100 200 1400 400];
 co = get(gca,'colororder');
 clf
 hF.Color = 'w';
