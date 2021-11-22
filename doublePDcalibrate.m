@@ -19,14 +19,13 @@ b1 = fout.b1;
 b2 = fout.xC*fout.m1 + fout.b1 - fout.xC*fout.m2;
 
 fitStr = ['$V(P) = P\cdot' num2str(round(m1,4)) '~\mathrm{V/W} + ' ...
-    num2str(round(b1,4)) '~\mathrm{V}~(<' num2str(round(xC,4)) '~\mathrm{W})$' ...
+    num2str(round(b1,5)) '~\mathrm{V}~(<' num2str(round(xC,5)) '~\mathrm{W})$' ...
     newline ...
     '$V(P) = P\cdot' num2str(round(m2,4)) '~\mathrm{V/W} + ' ...
-    num2str(round(b2,4)) '~\mathrm{V}~(>' num2str(round(xC,4)) '~\mathrm{W})$'];
+    num2str(round(b2,5)) '~\mathrm{V}~(>' num2str(round(xC,5)) '~\mathrm{W})$'];
 
 % Make simple fit function
 fitfunc = @(x) (x*m1+b1).*(x<xC) + (x*m2+b2).*(x>=xC);
-
 
 x = linspace(0,max(P),1000);
 hF = figure;
@@ -42,6 +41,6 @@ set(gca,'Xgrid','on','ygrid','on','box','on',...
     'linewidth',1,'fontsize',12);
 ylim([-.05 23]);
 
-legend(pT,fitStr,'interpreter','latex');
+legend(pT,fitStr,'interpreter','latex','location','southeast');
 end
 

@@ -24,54 +24,54 @@ data = [3.7	0.03	0.003	0.008	0.033;
 
 doublePDcalibrate(1e-3*data(:,1),data(:,5));
 
-P = linspace(0,4,1000);
-
-hF = figure;
-hF.Position = [100 200 1400 400];
-co = get(gca,'colororder');
-clf
-hF.Color = 'w';
-
-subplot(141)
-pD = plot(data(:,1),data(:,2),'o','markerfacecolor',co(1,:),...
-    'linewidth',1,'markeredgecolor',co(1,:)*.5);
-set(gca,'Xgrid','on','ygrid','on','box','on','linewidth',1,...
-    'fontname','times','fontsize',10);
-hold on
-pT = plot(P*1e3,pdOut_X(1).power2voltage(P),'k--','linewidth',2);
-xlim([0 2000]);
-xlabel('input power (mW)');
-ylabel('voltage (V)');
-
-subplot(142)
-pD = plot(data(:,1),data(:,3),'o','markerfacecolor',co(2,:),...
-    'linewidth',1,'markeredgecolor',co(2,:)*.5);
-set(gca,'Xgrid','on','ygrid','on','box','on','linewidth',1,...
-    'fontname','times','fontsize',10);
-hold on
-pT = plot(P*1e3,pdOut_X(2).power2voltage(P),'k--','linewidth',2);
-xlim([0 2000]);
-xlabel('input power (mW)');
-ylabel('voltage (V)');
-
-subplot(143)
-pD = plot(data(:,1),data(:,5),'o','markerfacecolor',co(4,:),...
-    'linewidth',1,'markeredgecolor',co(4,:)*.5);
-set(gca,'Xgrid','on','ygrid','on','box','on','linewidth',1,...
-    'fontname','times','fontsize',10);
-hold on
-% pT = plot(P*1e3,pdS_X(2).power2voltage(P),'k--','linewidth',2);
-xlim([0 2000]);
-xlabel('input power (mW)');
-ylabel('voltage (V)');
-
-subplot(144)
-pD = plot(data(:,1),data(:,4),'o','markerfacecolor',co(3,:),...
-    'linewidth',1,'markeredgecolor',co(3,:)*.5);
-set(gca,'Xgrid','on','ygrid','on','box','on','linewidth',1,...
-    'fontname','times','fontsize',10);
-hold on
-pT = plot(P*1e3,pdOut_X(3).power2voltage(P),'k--','linewidth',2);
-xlim([0 2000]);
-xlabel('input power (mW)');
-ylabel('voltage (V)');
+% P = linspace(0,4,1000);
+% 
+% hF = figure;
+% hF.Position = [100 200 1400 400];
+% co = get(gca,'colororder');
+% clf
+% hF.Color = 'w';
+% 
+% subplot(141)
+% pD = plot(data(:,1),data(:,2),'o','markerfacecolor',co(1,:),...
+%     'linewidth',1,'markeredgecolor',co(1,:)*.5);
+% set(gca,'Xgrid','on','ygrid','on','box','on','linewidth',1,...
+%     'fontname','times','fontsize',10);
+% hold on
+% pT = plot(P*1e3,pdOut_X(1).power2voltage(P),'k--','linewidth',2);
+% xlim([0 2000]);
+% xlabel('input power (mW)');
+% ylabel('voltage (V)');
+% 
+% subplot(142)
+% pD = plot(data(:,1),data(:,3),'o','markerfacecolor',co(2,:),...
+%     'linewidth',1,'markeredgecolor',co(2,:)*.5);
+% set(gca,'Xgrid','on','ygrid','on','box','on','linewidth',1,...
+%     'fontname','times','fontsize',10);
+% hold on
+% pT = plot(P*1e3,pdOut_X(2).power2voltage(P),'k--','linewidth',2);
+% xlim([0 2000]);
+% xlabel('input power (mW)');
+% ylabel('voltage (V)');
+% 
+% subplot(143)
+% pD = plot(data(:,1),data(:,5),'o','markerfacecolor',co(4,:),...
+%     'linewidth',1,'markeredgecolor',co(4,:)*.5);
+% set(gca,'Xgrid','on','ygrid','on','box','on','linewidth',1,...
+%     'fontname','times','fontsize',10);
+% hold on
+% % pT = plot(P*1e3,pdS_X(2).power2voltage(P),'k--','linewidth',2);
+% xlim([0 2000]);
+% xlabel('input power (mW)');
+% ylabel('voltage (V)');
+% 
+% subplot(144)
+% pD = plot(data(:,1),data(:,4),'o','markerfacecolor',co(3,:),...
+%     'linewidth',1,'markeredgecolor',co(3,:)*.5);
+% set(gca,'Xgrid','on','ygrid','on','box','on','linewidth',1,...
+%     'fontname','times','fontsize',10);
+% hold on
+% pT = plot(P*1e3,pdOut_X(3).power2voltage(P),'k--','linewidth',2);
+% xlim([0 2000]);
+% xlabel('input power (mW)');
+% ylabel('voltage (V)');
